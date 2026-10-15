@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartMediBot</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>🤖 SmartMediBot</h1>
+    <p>Hospital Medicine Delivery Robot</p>
+  </header>
+
+  <main>
+
+    <section class="status-section">
+      <h2>Robot Status</h2>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Robot</h3>
+          <p class="online">● Online</p>
+        </div>
+
+        <div class="card">
+          <h3>Battery</h3>
+          <p>🔋 85%</p>
+        </div>
+
+        <div class="card">
+          <h3>Location</h3>
+          <p id="location">Base Station</p>
+        </div>
+
+        <div class="card">
+          <h3>Status</h3>
+          <p id="robotStatus">Ready</p>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="delivery-section">
+      <h2>Send Medicine</h2>
+
+      <label for="bed">Select Patient Bed</label>
+
+      <select id="bed">
+        <option value="">Select Bed</option>
+        <option value="Bed 1">Bed 1</option>
+        <option value="Bed 2">Bed 2</option>
+        <option value="Bed 3">Bed 3</option>
+      </select>
+
+      <button onclick="sendMedicine()">Send Medicine</button>
+
+      <div class="delivery-status">
+        <h3>Delivery Status</h3>
+        <p id="deliveryStatus">Waiting for delivery request...</p>
+      </div>
+    </section>
+
+
+    <section class="control-section">
+      <h2>Robot Control</h2>
+
+      <div class="buttons">
+        <button onclick="startRobot()">▶ Start</button>
+        <button onclick="stopRobot()">⏹ Stop</button>
+        <button class="emergency" onclick="emergencyStop()">
+          🚨 Emergency Stop
+        </button>
+      </div>
+    </section>
+
+
+    <section class="history-section">
+      <h2>Delivery History</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Bed</th>
+            <th>Time</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+
+        <tbody id="history">
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>SmartMediBot | IoT-Based Hospital Medicine Delivery System</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
